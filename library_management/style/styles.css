@@ -1,0 +1,458 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-image: url(../img/background.jpg);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: 100% 180vh;
+  overflow-x: hidden;
+}
+
+/* header styling */
+
+header {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 100%;
+  height: 10vh;
+  align-items: center;
+}
+
+header img {
+  width: 3em;
+  height: 2em;
+  margin-left: 2em;
+}
+
+header h3 {
+  font-size: 0.9rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 800;
+  margin-left: 0.5em;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.login input {
+  outline: none;
+  height: 1.7em;
+  margin-left: 0.5em;
+  padding: 0.3em;
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgb(190, 190, 190);
+}
+
+.login input::placeholder {
+  color: rgb(138, 138, 138);
+}
+
+.login input:focus {
+  border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+.login button,
+.logout button,
+.signup button {
+  border: none;
+  outline: none;
+  background-color: #00bff1;
+  height: 1.7em;
+  margin-left: 0.5em;
+  margin-right: 2em;
+  border-radius: 4px;
+  padding: 0.3em;
+  color: rgb(238, 238, 238);
+  cursor: pointer;
+}
+
+.logout button {
+  margin-right: 1.2em;
+}
+
+.logout-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logout-wrapper p {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  height: fit-content;
+}
+
+/* hamburger menu */
+.hamburger {
+  margin-right: 2em;
+  cursor: pointer;
+  width: fit-content;
+  height: fit-content;
+}
+.line1,
+.line2,
+.line3 {
+  height: 0.3em;
+  width: 2.1em;
+  margin: 0.2em 0em;
+  border-radius: 8px;
+  background-color: rgb(126, 126, 126);
+  transition: all 0.7s ease;
+}
+
+.line1Mod {
+  transform: rotate(405deg) translateY(10.5px) translateX(1px);
+}
+
+.line2Mod {
+  opacity: 0;
+}
+
+.line3Mod {
+  transform: rotate(-405deg) translateY(-10.5px) translateX(1px);
+}
+/* main styling */
+
+main {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0em 2em;
+}
+
+/* error and success msg in main */
+.error,
+.success {
+  display: flex;
+  width: fit-content;
+  padding: 0.3em 1em;
+  background-color: rgb(224, 255, 253);
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+.error img,
+.success img {
+  width: 1em;
+  height: 1em;
+}
+
+.error p {
+  font-size: 0.7rem;
+  color: red;
+}
+
+.success p {
+  font-size: 0.7rem;
+  color: green;
+}
+
+/* signup form style */
+.signup-form {
+  width: 30em;
+  height: 29em;
+  background-color: rgba(71, 20, 0, 0.171);
+  /* border: 1px solid rgb(100, 3, 255); */
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-form h3 {
+  color: white;
+}
+
+.signup {
+  display: flex;
+  flex-direction: column;
+}
+
+.signup input {
+  border: none;
+  outline: none;
+  height: 2.8em;
+  width: 27em;
+  border-radius: 4px;
+  padding: 1em;
+  margin: 0.5em 0em;
+}
+
+.signup button {
+  height: 2.8em;
+  width: 27em;
+  margin: 0.5em 0em;
+  padding: 1em;
+  transition: all 1s;
+}
+
+.signup button:hover {
+  transform: rotateY(180deg);
+}
+
+/* welcome intro style */
+
+.index-intro {
+  display: flex;
+  flex-direction: column;
+  margin-right: 1.7em;
+}
+
+.index-intro h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 800;
+  font-size: 2.5rem;
+  margin-bottom: 1em;
+  animation: fadein_heading 1.5s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadein_heading {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.index-intro-desc {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+  color: rgb(37, 37, 37);
+  opacity: 0;
+  animation: slide 2s 1.5s;
+  animation-fill-mode: forwards;
+  position: relative;
+}
+
+@keyframes slide {
+  0% {
+    opacity: 0;
+    left: -400px;
+  }
+  100% {
+    opacity: 1;
+    left: 0px;
+  }
+}
+
+.index-intro a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  margin-top: 1em;
+  padding: 1em 2em;
+  border: 2px solid #39b6ff;
+  border-radius: 5px;
+  display: block;
+  height: fit-content;
+  width: fit-content;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  animation: fadein_button 1s 3.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadein_button {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.index-intro a:hover {
+  color: rgb(253, 23, 23);
+  background-color: #39b6ff;
+}
+
+/* menu style */
+.menu {
+  background-color: white;
+  display: block;
+  position: absolute;
+  width: 25%;
+  height: 90vh;
+  bottom: 0;
+  right: 0;
+  top: 10vh;
+  transform: translateX(100%);
+  transition: all 0.5s ease;
+}
+
+.menuslide {
+  transform: translateX(0%);
+}
+
+.menu li {
+  list-style: none;
+  line-height: 5em;
+  opacity: 0;
+}
+
+@keyframes item_slide {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.menu li a {
+  text-decoration: none;
+  color: rgb(31, 31, 31);
+  display: block;
+  width: 100%;
+  height: 5em;
+  text-align: center;
+  transition: all 0.5s ease-in-out;
+}
+
+.menu li a:hover {
+  background-color: rgb(238, 238, 238);
+}
+
+/* addBooks modal */
+.addBooksContainer,
+.addMembersContainer,
+.issueBooksContainer {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  right: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.527);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.addBooksForm,
+.addMembersForm,
+.issueBooksForm {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: white;
+  border-radius: 4px;
+  animation: drop 0.4s forwards ease;
+}
+
+@keyframes drop {
+  from {
+    transform: translateY(-70px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+
+.addBooksForm input,
+.addMembersForm input,
+.issueBooksForm input {
+  padding: 1em 0.3em;
+  outline: none;
+  width: 25em;
+  height: 1em;
+  border: none;
+  border-bottom: 1px solid rgb(187, 187, 187);
+  margin: 8px 0px;
+  transition: all 0.6s ease;
+}
+
+.addBooksForm input:focus,
+.addMembersForm input:focus,
+.issueBooksForm input:focus {
+  border-bottom: 1px solid rgb(44, 44, 44);
+}
+
+.addBooksForm button,
+.addMembersForm button,
+.issueBooksForm button {
+  padding: 0.7em 0em;
+  margin: 8px 0px;
+  height: 3em;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.addBooksForm button:hover,
+.addMembersForm button:hover,
+.issueBooksForm button:hover,
+.close:hover {
+  opacity: 0.7;
+}
+
+.add {
+  background-color: #00bff1;
+  color: white;
+}
+
+.close {
+  background-color: rgb(204, 0, 0);
+  color: white;
+  border-radius: 5px;
+  height: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  text-decoration: none;
+}
+
+/* view books */
+.viewBooksContainer {
+  background-color: white;
+  min-width: 100%;
+  border-collapse: collapse;
+  border: none;
+  border-bottom: 1px solid rgb(165, 165, 165);
+  margin: 0 auto;
+}
+
+.viewBooksHeading tr,
+.viewBooksContent tr {
+  text-align: center;
+}
+
+.delete {
+  border: none;
+  border-radius: 5px;
+  padding: 1em;
+  font-size: 14px;
+  margin: 0 auto;
+}
+
+/* close modal */
+.closeModal {
+  display: none;
+}
